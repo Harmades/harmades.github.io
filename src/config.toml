@@ -1,4 +1,4 @@
-baseURL = "http://harmades.github.io/"
+baseURL = "https://harmades.github.io/"
 languageCode = "en-us"
 title = "Adrian Lissot's blog"
 theme = "gohugo-theme-ananke"
