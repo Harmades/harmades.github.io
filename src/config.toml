@@ -1,0 +1,27 @@
+baseURL = "http://harmades.github.io/"
+languageCode = "en-us"
+title = "Adrian Lissot's blog"
+theme = "gohugo-theme-ananke"
+
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 7 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  favicon = ""
+  description = "The last theme you'll ever need. Maybe."
+  facebook = ""
+  twitter = "https://twitter.com/adrianlissot"
+  github = "https://github.com/Harmades"
+  linkedin = "https://www.linkedin.com/in/adrian-lissot-5a6981119/"
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-black"
+  featured_image = "https://orig00.deviantart.net/bc07/f/2012/145/9/7/scorched_earth_by_arcipello-d5118nz.jpg"
