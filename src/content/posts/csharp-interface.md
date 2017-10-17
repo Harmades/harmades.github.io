@@ -56,7 +56,15 @@ ACloneable clone = (ACloneable)cloneableInstance.Clone();
 
 The Java code looks a lot nicer to me, because I don't like having to tell the compiler that I know more things (downcasting).
 
-C# interface specifies that method signatures must match, otherwise the compiler throws an error to your face. But the Java compiler is happy, which means I've successfully implemented the interface with my ```ACloneable``` class.
+C# interface specifies that method signatures must match, otherwise the compiler throws an error to your face. This behaviour is explained in the C# specification. If you've never seen it, go check it out ! If you're curious about the language, it really is an interesting document. Interface method implementations behaviour are described as following :
+
+> For purposes of interface mapping, a class member A matches an interface member B when:
+> * A and B are methods, and the name, type, and formal parameter lists of A and B are identical.
+
+But the Java compiler is happy, which means I've successfully implemented the interface with my ```ACloneable``` class.
+TODO : quote Java spec
+
+
 
 I'm mainly programming in C# right now. Am I stuck with downcasting every single time I want to clone, or encounter similar cases ? No. There's a workaround with explicit interface implementation.
 
