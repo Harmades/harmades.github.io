@@ -10,6 +10,8 @@ What makes C# interfaces unique in their own way, from C# 1 to C# 8.
 
 <!-- Post -->
 
+# C# vs Java interface
+
 In an object-oriented language, interface defines a contract that implementing classes follow.
 
 Java and C# have them, but C# gives you more restrictions about the way you implement interface.
@@ -61,11 +63,38 @@ C# interface specifies that method signatures must match, otherwise the compiler
 > For purposes of interface mapping, a class member A matches an interface member B when:
 > * A and B are methods, and the name, type, and formal parameter lists of A and B are identical.
 
-But the Java compiler is happy, which means I've successfully implemented the interface with my ```ACloneable``` class.
-TODO : quote Java spec
+But the Java compiler is happy, which means I've successfully implemented the interface with my ```ACloneable``` class. As opposed to the C# specification, the Java specification allows it :
 
+> An instance method mC declared in or inherited by class C, overrides from C another method mI declared in interface I, if all of the following are true:
+> * I is a superinterface of C.
+> * mI is not static.
+> * C does not inherit mI.
+> * The signature of mC is a subsignature (§8.4.2) of the signature of mI.
+> * mI is public
 
+# Are C# programmers restricted by the lack of return type covariance ?
 
-I'm mainly programming in C# right now. Am I stuck with downcasting every single time I want to clone, or encounter similar cases ? No. There's a workaround with explicit interface implementation.
+I'm mainly programming in C# right now. Am I stuck with downcasting every single time I encounter the ICloneable case ? No. There's a workaround : explicit interface implementation.
+
+First, let's see what they are ! Here's an extract of the actual implementation of List<T> in .NET Core, with the Add methods. One method comes from the non-generic interface IList, the other one from IList<T>.
+```
+    public class List<T> : IList<T>, System.Collections.IList, IReadOnlyList<T>
+    {
+        int System.Collections.IList.Add(Object item) {...}
+        int Add(T item) {...}
+    }
+
+    var list = new List<string>();
+    list.Add("OK");
+    list.Add((object)"NOK"); // Compile-time error.
+    var nonGenericList = (IList)list;
+    nonGenericList.Add(3); // Runtime error, but compiles !
+```
+
+Explicit interface implementation allows the concrete List<T> to implement IList, thus ensuring retrocompatibility to the old non-generic interface, while hiding all the methods from the IList interface. This prevents non-type safe usage of the List<T> interface with an instance of List<T>. You can still access all the implemented methods, provided that you can the instance to the interface with the hidden methods.
+
+# How does explicit interface implementation solve the ICloneable problem ?
+
+Well, you can implement ICloneable explictly, hiding the method from direct usage through your class, and create write the correct one !
 
 For the same reason, a similar case exist with method arguments, and it's called method arguments contravariance. Java and C# don't allow this, neither C++, as it creates [overloading issues](http://yosefk.com/c++fqa/inheritance-virtual.html#fqa-20.8).
