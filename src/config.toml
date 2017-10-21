@@ -1,27 +1,106 @@
-baseURL = "https://harmades.github.io/"
+baseurl = "https://example.org/"
 languageCode = "en-us"
-title = "Adrian Lissot's blog"
-theme = "gohugo-theme-ananke"
-
-MetaDataFormat = "yaml"
-DefaultContentLanguage = "en"
-SectionPagesMenu = "main"
-Paginate = 7 # this is set low for demonstrating with dummy content. Set to a higher number
+title = "Icarus"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "spf13"
+# Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
-enableRobotsTXT = true
+# Define the number of posts per page
+paginate = 10
+footnotereturnlinkcontents = "↩"
+theme = "hugo-icarus-theme"
 
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
+
+[permalinks]
+    post = "/:year/:month/:day/:slug"
+
 
 [params]
-  favicon = ""
-  description = "The last theme you'll ever need. Maybe."
-  facebook = ""
-  twitter = "https://twitter.com/adrianlissot"
-  github = "https://github.com/Harmades"
-  linkedin = "https://www.linkedin.com/in/adrian-lissot-5a6981119/"
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-black"
-  featured_image = "https://orig00.deviantart.net/bc07/f/2012/145/9/7/scorched_earth_by_arcipello-d5118nz.jpg"
+    # Tell me who you are
+    author = "John Doe"
+    bio = "Blogger - Programmer - Gopher"
+    location = "Earth"
+    site_description = ""
+    copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
+    avatar = "css/images/avatar.png"
+    # Enter your email address to display your Gravatar icon in the profile. If not set the theme
+    # will fallback to the avatar.
+    gravatar = "you@example.com"
+    logo = "css/images/logo.png"
+    disable_mathjax = false # set to true to disable MathJax
+
+    # define which types of pages should be shown. By default the type with the most regular pages
+    mainSections = ["post"]
+
+    # Format dates with Go's time formatting
+    date_format = "2006-01-02"
+
+    # Add custom assets with their paths relative to the static folder
+	custom_css = []
+	custom_js  = []
+
+# Create custom menu entries by defining a label and a link for
+# them. Since you can also link posts, you've the option the
+# place the links before or after them.
+#
+# E.g.: "Home" appears before all linked posts in the menu
+# and "Tags" / "Categories" after them.
+[[params.menu]]
+    before = true
+    label  = "Home"
+    link   = "/"
+
+[[params.menu]]
+    before = false
+    label  = "Tags"
+    link   = "tags/"
+
+[[params.menu]]
+    before = false
+    label  = "Categories"
+    link   = "categories/"
+
+# Enter a link for the follow button on the left
+[params.profile]
+    follow_button = "https://github.com/digitalcraftsman"
+
+
+[social]
+# Add your social network accounts to the profile section on the left
+# by entering your username. The links to your account will be
+# created automatically.
+    github          = "digitalcraftsman"
+    gitlab          = ""
+    bitbucket       = ""
+    jsfiddle        = ""
+    codepen         = ""
+    foursquare      = ""
+    dribbble        = ""
+    deviantart      = ""
+    behance         = ""
+    flickr          = ""
+    instagram       = ""
+    youtube         = ""
+    vimeo           = ""
+    vine            = ""
+    medium          = ""
+    wordpress       = ""
+    tumblr          = ""
+    xing            = ""
+    linkedin        = ""
+    slideshare      = ""
+    stackoverflow   = ""
+    reddit          = ""
+    pinterest       = ""
+    googleplus      = ""
+    facebook        = ""
+    facebook_admin  = ""
+    twitter_domain  = ""
+    twitter         = "spf13"
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    recent_articles = true
+    categories = true
+    tags = true
+    tag_cloud = true

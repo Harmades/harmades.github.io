@@ -1,14 +1,11 @@
----
-title: "C# Interface"
-date: 2017-10-15T00:41:08+02:00
-draft: true
----
-
-<!-- Preview -->
++++
+title = "Interface in C#"
+date = 2017-10-15T00:41:08+02:00
++++
 
 What makes C# interfaces unique in their own way, from C# 1 to C# 8.
 
-<!-- Post -->
+<!--more-->
 
 # C# vs Java interface
 
