@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C# on Icarus</title>
-    <link>https://harmades.github.io/tags/c#/</link>
-    <description>Recent content in C# on Icarus</description>
+    <title>Posts on Icarus</title>
+    <link>https://harmades.github.io/post/</link>
+    <description>Recent content in Posts on Icarus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
-    <lastBuildDate>Wed, 11 Oct 2017 22:32:45 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:41:08 +0200</lastBuildDate>
     
-	<atom:link href="https://harmades.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://harmades.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interface in C#</title>
+      <link>https://harmades.github.io/2017/10/15/interface-in-c/</link>
+      <pubDate>Sun, 15 Oct 2017 00:41:08 +0200</pubDate>
+      
+      <guid>https://harmades.github.io/2017/10/15/interface-in-c/</guid>
+      <description>&lt;p&gt;What makes C# interfaces unique in their own way, from C# 1 to C# 8.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Welcome</title>

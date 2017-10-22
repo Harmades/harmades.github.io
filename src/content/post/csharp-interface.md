@@ -9,15 +9,11 @@ What makes C# interfaces unique in their own way, from C# 1 to C# 8.
 
 # C# vs Java interface
 
-In an object-oriented language, interface defines a contract that implementing classes follow.
+In an object-oriented language, interface defines a contract that implementing classes follow. Java and C# have them, but C# gives you more restrictions about the way you implement interface.
 
-Java and C# have them, but C# gives you more restrictions about the way you implement interface.
+Let's take the cloneable example. If you choose to implement the ```Cloneable``` contract, it provides you a ```clone``` method, which returns a copy of the object instance. So you come up with a ```Cloneable``` interface, which specifies the clone method : it returns a ```Cloneable```, because you don't know what type the implementing class will be.
 
-Let's take the cloneable example. If you choose to implement a Cloneable contract, it provides you a clone method, which returns a copy of the object instance.
-
-So you come up with a Cloneable interface, which specifies the clone method. It returns a Cloneable, because you don't know what type the implementing class will be.
-
-In Java, it is possible to implement the interface, changing the return type to some more specific type. It is safe to do so, as you do not break the contract ! This is called return type covariance :
+In Java, it is possible to implement the interface and change the return type to some more specific type. It is safe to do so, as you do not break the contract ! This is called return type covariance :
 
 ```java
 public interface Cloneable {
@@ -28,7 +24,8 @@ public class ACloneable implements Cloneable {
     public ACloneable clone() { return new ACloneable(); }
 }
 
-/* Note : I know this is not the way Cloneable are implemented in Java, but let's forget about that for now ;) (you can read more about cloneable elements here) */
+/* Note : I know this is not the way Cloneable are implemented in Java, but let's forget about that for now ;)
+You can read more about cloneable elements here */
 ```
 
 However, in C#, you're not allowed to do it :
@@ -45,17 +42,18 @@ public class ACloneable : ICloneable
 }
 ```
 
-```
+```java
 // It allows you to do this (Java)
 ACloneable clone = cloneableInstance.clone();
-
+```
+```csharp
 // Instead of this (C#)
 ACloneable clone = (ACloneable)cloneableInstance.Clone();
 ```
 
 The Java code looks a lot nicer to me, because I don't like having to tell the compiler that I know more things (downcasting).
 
-C# interface specifies that method signatures must match, otherwise the compiler throws an error to your face. This behaviour is explained in the C# specification. If you've never seen it, go check it out ! If you're curious about the language, it really is an interesting document. Interface method implementations behaviour are described as following :
+C# interface specifies that method signatures must match, otherwise the compiler throws an error to your face. This behaviour is explained in the C# specification. If you've never seen it, go [check it out)(https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/) ! If you're curious about the language, it really is an interesting document. Interface method implementations behaviour are described as following :
 
 > For purposes of interface mapping, a class member A matches an interface member B when:
 > * A and B are methods, and the name, type, and formal parameter lists of A and B are identical.
@@ -71,9 +69,9 @@ But the Java compiler is happy, which means I've successfully implemented the in
 
 # Are C# programmers restricted by the lack of return type covariance ?
 
-I'm mainly programming in C# right now. Am I stuck with downcasting every single time I encounter the ICloneable case ? No. There's a workaround : explicit interface implementation.
+I'm mainly programming in C# right now. Am I stuck with downcasting every single time I encounter the ```ICloneable``` case ? No. There's a workaround : explicit interface implementation.
 
-First, let's see what they are ! Here's an extract of the actual implementation of List<T> in .NET Core, with the Add methods. One method comes from the non-generic interface IList, the other one from IList<T>.
+First, let's see what they are ! Here's an extract of the actual implementation of ```List<T>``` in .NET Core, with the ```Add``` methods. One method comes from the non-generic interface ```IList```, the other one from ```IList<T>```.
 
 ```csharp
     public class List<T> : IList<T>, System.Collections.IList, IReadOnlyList<T>
@@ -89,11 +87,11 @@ First, let's see what they are ! Here's an extract of the actual implementation 
     nonGenericList.Add(3); // Runtime error, but compiles !
 ```
 
-Explicit interface implementation allows the concrete List<T> to implement IList, thus ensuring retrocompatibility to the old non-generic interface, while hiding all the methods from the IList interface. This prevents non-type safe usage of the List<T> interface with an instance of List<T>. You can still access all the implemented methods, provided that you can the instance to the interface with the hidden methods.
+Explicit interface implementation allows the concrete ```List<T>``` to implement ```IList```, thus ensuring retrocompatibility to the old non-generic interface, while hiding all the methods from the ```IList``` interface. This prevents non-type safe usage of the ```List<T>``` interface with an instance of ```List<T>```. You can still access all the implemented methods, provided that you can the instance to the interface with the hidden methods.
 
-# How does explicit interface implementation solve the ICloneable problem ?
+# How does explicit interface implementation solve the ```ICloneable``` problem ?
 
-Well, you can implement ICloneable explictly, hiding the method from direct usage through your class. Then, define a new method with the correct return type !
+Well, you can implement ```ICloneable``` explictly, hiding the method from direct usage through your class. Then, define a new method with the correct return type !
 
 ```csharp
 public interface ICloneable
@@ -103,10 +101,21 @@ public interface ICloneable
 
 public class ACloneable : ICloneable
 {
-    public ACloneable Clone() { return new ACloneable(); }
+    public ACloneable Clone() { return new ACloneable(); } // Consumers will call this method instead, and get ACloneable instead of ICloneable !
     
-    ICloneable.Clone() { return new ACloneable(); }
+    ICloneable.Clone() => Clone();
 }
 ```
 
-For the same reason, a similar case exist with method arguments, and it's called method arguments contravariance. Java and C# don't allow this, neither C++, as it creates [overloading issues](http://yosefk.com/c++fqa/inheritance-virtual.html#fqa-20.8).
+Explicitly implementing interfaces hides the method from direct use with a ```ACloneable``` instance, but not through ```ICloneable```.
+
+# Final words
+
+In C#, you must indeed implement all methods defined by an interface, but it's up to you if you want to expose them directly to the caller. There's no equivalent of this in Java ... both have different point of views regarding what type of contract interfaces define. However, I'd really like to see covariant return type in C# one day (maybe [soon](https://github.com/dotnet/csharplang/blob/master/proposals/covariant-returns.md) ?), because the explicit interface implementation clearly is a workaround. Leave your opinion in the comments !
+
+
+## Contravariant method argument type
+
+There is a similar case, dealing with method argument. You can read more about that on [wikipedia](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Contravariant_method_argument_type).
+
+Java and C# don't allow this, neither C++, as it creates [overloading issues](http://yosefk.com/c++fqa/inheritance-virtual.html#fqa-20.8).
