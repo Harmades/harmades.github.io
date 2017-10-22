@@ -25,7 +25,7 @@ public interface Cloneable {
 }
 
 public class ACloneable implements Cloneable {
-    public ACloneable clone() {return null;}
+    public ACloneable clone() { return new ACloneable(); }
 }
 
 /* Note : I know this is not the way Cloneable are implemented in Java, but let's forget about that for now ;) (you can read more about cloneable elements here) */
@@ -34,14 +34,14 @@ public class ACloneable implements Cloneable {
 However, in C#, you're not allowed to do it :
 
 ```csharp
-public interface Cloneable
+public interface ICloneable
 {
     ICloneable Clone();
 }
 
-public class ACloneable : Cloneable
+public class ACloneable : ICloneable
 {
-    public ACloneable Clone() {return null;} // Compiler error : ACloneable does not implement interface member ICloneable.Clone(), because it does not have the matching return type of ICloneable.
+    public ACloneable Clone() { return new ACloneable(); } // Compiler error : ACloneable does not implement interface member ICloneable.Clone(), because it does not have the matching return type of ICloneable.
 }
 ```
 
@@ -74,7 +74,8 @@ But the Java compiler is happy, which means I've successfully implemented the in
 I'm mainly programming in C# right now. Am I stuck with downcasting every single time I encounter the ICloneable case ? No. There's a workaround : explicit interface implementation.
 
 First, let's see what they are ! Here's an extract of the actual implementation of List<T> in .NET Core, with the Add methods. One method comes from the non-generic interface IList, the other one from IList<T>.
-```
+
+```csharp
     public class List<T> : IList<T>, System.Collections.IList, IReadOnlyList<T>
     {
         int System.Collections.IList.Add(Object item) {...}
@@ -92,6 +93,20 @@ Explicit interface implementation allows the concrete List<T> to implement IList
 
 # How does explicit interface implementation solve the ICloneable problem ?
 
-Well, you can implement ICloneable explictly, hiding the method from direct usage through your class, and create write the correct one !
+Well, you can implement ICloneable explictly, hiding the method from direct usage through your class. Then, define a new method with the correct return type !
+
+```csharp
+public interface ICloneable
+{
+    ICloneable Clone();
+}
+
+public class ACloneable : ICloneable
+{
+    public ACloneable Clone() { return new ACloneable(); }
+    
+    ICloneable.Clone() { return new ACloneable(); }
+}
+```
 
 For the same reason, a similar case exist with method arguments, and it's called method arguments contravariance. Java and C# don't allow this, neither C++, as it creates [overloading issues](http://yosefk.com/c++fqa/inheritance-virtual.html#fqa-20.8).

@@ -1,8 +1,8 @@
-baseurl = "https://example.org/"
+baseurl = "https://harmades.github.io"
 languageCode = "en-us"
 title = "Icarus"
 # Enable comments by entering your Disqus shortname
-disqusShortname = "spf13"
+disqusShortname = "Adrian"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 # Define the number of posts per page
@@ -17,17 +17,17 @@ theme = "hugo-icarus-theme"
 
 [params]
     # Tell me who you are
-    author = "John Doe"
-    bio = "Blogger - Programmer - Gopher"
-    location = "Earth"
+    author = "Adrian Lissot"
+    bio = "Gamer - Programmer - .NET"
+    location = "Paris, France"
     site_description = ""
     copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
     avatar = "css/images/avatar.png"
     # Enter your email address to display your Gravatar icon in the profile. If not set the theme
     # will fallback to the avatar.
-    gravatar = "you@example.com"
+    # gravatar = "you@example.com"
     logo = "css/images/logo.png"
-    disable_mathjax = false # set to true to disable MathJax
+    # disable_mathjax = false # set to true to disable MathJax
 
     # define which types of pages should be shown. By default the type with the most regular pages
     mainSections = ["post"]
@@ -62,21 +62,21 @@ theme = "hugo-icarus-theme"
 
 # Enter a link for the follow button on the left
 [params.profile]
-    follow_button = "https://github.com/digitalcraftsman"
+    follow_button = "https://github.com/harmades"
 
 
 [social]
 # Add your social network accounts to the profile section on the left
 # by entering your username. The links to your account will be
 # created automatically.
-    github          = "digitalcraftsman"
+    github          = "harmades"
     gitlab          = ""
     bitbucket       = ""
     jsfiddle        = ""
     codepen         = ""
     foursquare      = ""
     dribbble        = ""
-    deviantart      = ""
+    deviantart      = "harmades"
     behance         = ""
     flickr          = ""
     instagram       = ""
@@ -87,16 +87,16 @@ theme = "hugo-icarus-theme"
     wordpress       = ""
     tumblr          = ""
     xing            = ""
-    linkedin        = ""
+    linkedin        = "adrian-lissot-5a6981119"
     slideshare      = ""
-    stackoverflow   = ""
+    stackoverflow   = "8784049/adrian-lissot"
     reddit          = ""
     pinterest       = ""
     googleplus      = ""
     facebook        = ""
     facebook_admin  = ""
     twitter_domain  = ""
-    twitter         = "spf13"
+    twitter         = "adrianlissot"
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
