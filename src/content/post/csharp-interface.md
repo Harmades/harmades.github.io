@@ -3,7 +3,7 @@ title = "Interface in C#"
 date = 2017-10-15T00:41:08+02:00
 +++
 
-What makes C# interfaces unique in their own way, from C# 1 to C# 8.
+What makes C# interfaces unique in their own way, from C# 1 to C# 7.
 
 <!--more-->
 
@@ -53,14 +53,16 @@ ACloneable clone = (ACloneable)cloneableInstance.Clone();
 
 The Java code looks a lot nicer to me, because I don't like having to tell the compiler that I know more things (downcasting).
 
-C# interface specifies that method signatures must match, otherwise the compiler throws an error to your face. This behaviour is explained in the C# specification. If you've never seen it, go [check it out)(https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/) ! If you're curious about the language, it really is an interesting document. Interface method implementations behaviour are described as following :
+C# interface specifies that method signatures must match, otherwise the compiler throws an error to your face. This behaviour is explained in the C# specification. If you've never seen it, go [check it out](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/) ! If you're curious about the language, it really is an interesting document. Interface method implementations behaviour are described as following :
 
 > For purposes of interface mapping, a class member A matches an interface member B when:
+> 
 > * A and B are methods, and the name, type, and formal parameter lists of A and B are identical.
 
 But the Java compiler is happy, which means I've successfully implemented the interface with my ```ACloneable``` class. As opposed to the C# specification, the Java specification allows it :
 
 > An instance method mC declared in or inherited by class C, overrides from C another method mI declared in interface I, if all of the following are true:
+> 
 > * I is a superinterface of C.
 > * mI is not static.
 > * C does not inherit mI.
