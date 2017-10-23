@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Icarus</title>
+    <title>Glorious, glorious code !</title>
     <link>https://harmades.github.io/</link>
-    <description>Recent content on Icarus</description>
+    <description>Recent content on Glorious, glorious code !</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 15 Oct 2017 00:41:08 +0200</pubDate>
       
       <guid>https://harmades.github.io/2017/10/15/interface-in-c/</guid>
-      <description>&lt;p&gt;What makes C# interfaces unique in their own way, from C# 1 to C# 8.&lt;/p&gt;
+      <description>&lt;p&gt;What makes C# interfaces unique in their own way, from C# 1 to C# 7.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
