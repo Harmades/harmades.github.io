@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blackburn Theme Demo</title>
+    <link>https://www.example.com/</link>
+    <description>Recent content on Blackburn Theme Demo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 00:41:08 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.example.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interface in C#</title>
+      <link>https://www.example.com/post/csharp-interface/</link>
+      <pubDate>Sun, 15 Oct 2017 00:41:08 +0200</pubDate>
+      
+      <guid>https://www.example.com/post/csharp-interface/</guid>
+      <description>&lt;p&gt;What makes C# interfaces unique in their own way, from C# 1 to C# 7.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://www.example.com/post/welcome/</link>
+      <pubDate>Wed, 11 Oct 2017 22:32:45 +0200</pubDate>
+      
+      <guid>https://www.example.com/post/welcome/</guid>
+      <description>Welcome to my personal programming blog ! I&amp;rsquo;ll post some technical stuff I love about C#, and more generally .NET.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://www.example.com/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.example.com/about/</guid>
+      <description>Hugo is a static site engine written in Go.
+It makes use of a variety of open source projects including:
+ Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
+Setup Some fun facts about Hugo:
+ Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://www.example.com/contact/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.example.com/contact/</guid>
+      <description> First Name  Last Name  E-Mail  City  State AL CA IL      Send   </description>
+    </item>
+    
+  </channel>
+</rss>
