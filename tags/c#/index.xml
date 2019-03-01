@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C# on Blackburn Theme Demo</title>
-    <link>https://www.example.com/tags/c#/</link>
+    <link>https://harmades.github.io/tags/c#/</link>
     <description>Recent content in C# on Blackburn Theme Demo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Wed, 11 Oct 2017 22:32:45 +0200</lastBuildDate>
     
-	<atom:link href="https://www.example.com/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://harmades.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Welcome</title>
-      <link>https://www.example.com/post/welcome/</link>
+      <link>https://harmades.github.io/post/welcome/</link>
       <pubDate>Wed, 11 Oct 2017 22:32:45 +0200</pubDate>
       
-      <guid>https://www.example.com/post/welcome/</guid>
+      <guid>https://harmades.github.io/post/welcome/</guid>
       <description>Welcome to my personal programming blog ! I&amp;rsquo;ll post some technical stuff I love about C#, and more generally .NET.</description>
     </item>
     
