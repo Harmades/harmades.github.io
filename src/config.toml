@@ -1,9 +1,9 @@
 baseurl = "https://harmades.github.io/"
 languageCode = "en-us"
-title = "Blackburn Theme Demo"
+title = "Magnificent Code"
 theme = "blackburn"
-author = "Yoshiharu Yamashita"
-copyright = "&copy; 2016. All rights reserved."
+author = "Adrian Lissot"
+copyright = "&copy; 2019. All rights reserved."
 canonifyurls = true
 paginate = 10
 
@@ -13,10 +13,10 @@ paginate = 10
 
 [params]
   # Shown in the home page
-  subtitle = "A Hugo Theme"
-  brand = "Blackburn"
+  subtitle = "Coding Blog"
+  brand = "Adrian Lissot"
   googleAnalytics = "Your Google Analytics tracking ID"
-  disqus = "Your Disqus shortname"
+  disqus = "Adrian"
   # CSS name for highlight.js
   highlightjs = "androidstudio"
   dateFormat = "02 Jan 2006, 15:04"
@@ -41,18 +41,11 @@ paginate = 10
     weight = 3
     identifier = "about"
     url = "/about/"
-  [[menu.main]]
-    name = "Contact"
-    pre = "<i class='fa fa-phone fa-fw'></i>"
-    weight = 4
-    url = "/contact/"
 
 [social]
   # Link your social networking accouns to the side menu
   # by entering your username or ID.
-  twitter = "*"
-  facebook = "*"
-  instagram = "*"
-  github = "yoshiharuyamashita"
-  stackoverflow = "*"
-  linkedin = "*"
+  twitter = "adrianlissot"
+  github = "harmades"
+  stackoverflow = "8784049/adrian-lissot"
+  linkedin = "adrian-lissot-5a6981119"

@@ -1,6 +1,7 @@
 +++
 title = "Interface in C#"
 date = 2017-10-15T00:41:08+02:00
+tags = ["C#", "Java", ".NET", "Interface"]
 +++
 
 What makes C# interfaces unique in their own way, from C# 1 to C# 7.
@@ -9,11 +10,16 @@ What makes C# interfaces unique in their own way, from C# 1 to C# 7.
 
 # C# vs Java interface
 
-In an object-oriented language, interface defines a contract that implementing classes follow. Java and C# have them, but C# gives you more restrictions about the way you implement interface.
+An interface defines a contract that implementing classes must follow. Java and C# of course have them, but C# gives you more (unnecessary) restrictions about the way you implement interface.
 
-Let's take the cloneable example. If you choose to implement the ```Cloneable``` contract, it provides you a ```clone``` method, which returns a copy of the object instance. So you come up with a ```Cloneable``` interface, which specifies the clone method : it returns a ```Cloneable```, because you don't know what type the implementing class will be.
+Let's take an example : the ```Cloneable``` example. Here's the corresponding interface, in Java, with its method signature:
+```java
+public interface Cloneable {
+    Cloneable clone();
+}
+```
 
-In Java, it is possible to implement the interface and change the return type to some more specific type. It is safe to do so, as you do not break the contract ! This is called return type covariance :
+In Java, the compiler lets you change the return type of the ```clone``` method to some more specific type. It is completely safe to do so, as you do not break the contract ! This is called return type covariance :
 
 ```java
 public interface Cloneable {
@@ -23,9 +29,9 @@ public interface Cloneable {
 public class ACloneable implements Cloneable {
     public ACloneable clone() { return new ACloneable(); }
 }
-
-/* Note : I know this is not the way Cloneable are implemented in Java, but let's forget about that for now ;)
-You can read more about cloneable elements here */
+// Usage
+Cloneable cloneableInstance = new ACloneable();
+ACloneable clone = cloneableInstance.clone();
 ```
 
 However, in C#, you're not allowed to do it :
@@ -38,16 +44,15 @@ public interface ICloneable
 
 public class ACloneable : ICloneable
 {
-    public ACloneable Clone() { return new ACloneable(); } // Compiler error : ACloneable does not implement interface member ICloneable.Clone(), because it does not have the matching return type of ICloneable.
-}
-```
+    // Compiler error : ACloneable does not implement interface member ICloneable.Clone(),
+    // because it does not have the matching return type of ICloneable.
+    public ACloneable Clone() => new ACloneable();
 
-```java
-// It allows you to do this (Java)
-ACloneable clone = cloneableInstance.clone();
-```
-```csharp
-// Instead of this (C#)
+    // Legal implementation.
+    public ICloneable Clone() => new ACloneable();
+}
+// Usage
+ICloneable cloneableInstance = new ACloneable();
 ACloneable clone = (ACloneable)cloneableInstance.Clone();
 ```
 
@@ -103,7 +108,8 @@ public interface ICloneable
 
 public class ACloneable : ICloneable
 {
-    public ACloneable Clone() { return new ACloneable(); } // Consumers will call this method instead, and get ACloneable instead of ICloneable !
+    // Consumers will call this method instead, and get ACloneable instead of ICloneable !
+    public ACloneable Clone() => new ACloneable();
     
     ICloneable.Clone() => Clone();
 }
