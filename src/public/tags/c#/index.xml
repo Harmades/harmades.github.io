@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C# on Blackburn Theme Demo</title>
+    <title>C# on Magnificent Code</title>
     <link>https://harmades.github.io/tags/c#/</link>
-    <description>Recent content in C# on Blackburn Theme Demo</description>
+    <description>Recent content in C# on Magnificent Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 11 Oct 2017 22:32:45 +0200</lastBuildDate>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 00:41:08 +0200</lastBuildDate>
     
 	<atom:link href="https://harmades.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Welcome</title>
-      <link>https://harmades.github.io/post/welcome/</link>
-      <pubDate>Wed, 11 Oct 2017 22:32:45 +0200</pubDate>
+      <title>Interface in C#</title>
+      <link>https://harmades.github.io/post/csharp-interface/</link>
+      <pubDate>Sun, 15 Oct 2017 00:41:08 +0200</pubDate>
       
-      <guid>https://harmades.github.io/post/welcome/</guid>
-      <description>Welcome to my personal programming blog ! I&amp;rsquo;ll post some technical stuff I love about C#, and more generally .NET.</description>
+      <guid>https://harmades.github.io/post/csharp-interface/</guid>
+      <description>&lt;p&gt;What makes C# interfaces unique in their own way, from C# 1 to C# 7.&lt;/p&gt;</description>
     </item>
     
   </channel>
