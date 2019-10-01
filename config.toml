@@ -1,6 +1,0 @@
-baseURL = "http://harmades.github.io/"
-languageCode = "en-gb"
-title = "Adrian Lissot's Blog"
-theme = "mint"
-pygmentsCodeFences = true
-pygmentsStyle = "emacs"

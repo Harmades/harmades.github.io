@@ -1,8 +1,0 @@
-{{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    {{ range .Pages }}
-    <div>
-        <a href="{{ .URL }}">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</a>
-    </div>
-    {{ end }}
-{{ end }}
