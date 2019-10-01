@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jams on Adrian Lissot&#39;s Blog</title>
-    <link>http://harmades.github.io/jams/</link>
+    <link>https://harmades.github.io/jams/</link>
     <description>Recent content in Jams on Adrian Lissot&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Sun, 15 Oct 2017 00:41:08 +0200</lastBuildDate>
     
-	<atom:link href="http://harmades.github.io/jams/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://harmades.github.io/jams/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>js13k - Playback</title>
-      <link>http://harmades.github.io/jams/js13k/</link>
+      <link>https://harmades.github.io/jams/js13k/</link>
       <pubDate>Sun, 15 Oct 2017 00:41:08 +0200</pubDate>
       
-      <guid>http://harmades.github.io/jams/js13k/</guid>
+      <guid>https://harmades.github.io/jams/js13k/</guid>
       <description>Check out my participation to js13k, Playback !</description>
     </item>
     
