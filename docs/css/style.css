@@ -137,3 +137,8 @@
     margin: 8px;
     color: var(--text-color)
 }
+
+#content pre {
+    padding: 16px;
+    overflow: scroll;
+}

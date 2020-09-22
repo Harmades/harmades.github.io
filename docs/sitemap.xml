@@ -14,7 +14,17 @@
   </url>
   
   <url>
+    <loc>https://harmades.github.io/posts/js13k-2020-post-mortem/</loc>
+    <lastmod>2020-09-21T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://harmades.github.io/jams/js13k-2020/</loc>
+    <lastmod>2020-09-21T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harmades.github.io/posts/</loc>
     <lastmod>2020-09-21T00:00:00+02:00</lastmod>
   </url>
   
@@ -45,11 +55,6 @@
   
   <url>
     <loc>https://harmades.github.io/tags/java/</loc>
-    <lastmod>2017-10-15T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harmades.github.io/posts/</loc>
     <lastmod>2017-10-15T00:00:00+02:00</lastmod>
   </url>
   
