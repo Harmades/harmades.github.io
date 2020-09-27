@@ -4,7 +4,7 @@ date = 2020-09-21
 tags = []
 +++
 
-# Introduction
+# Js13k 2020 post-mortem 1/3
 
 A quick reminder of what the js13k is:
 
@@ -184,4 +184,4 @@ Here are some points that could be improved:
 + Handle real circle-polygon collision
 + Implement momentum for a general-purpose physics engine
 
-That's the end of part 1. Be sure to check out part 2 on SVGs when it's ready!
+That's the end of part 1. ~~Be sure to check out part 2 on SVGs when it's ready!~~ [It is!]({{< ref "/posts/js13k-2020-post-mortem-2" >}})
