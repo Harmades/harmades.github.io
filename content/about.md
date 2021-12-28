@@ -1,5 +1,5 @@
-I'm Adrian Lissot, a software engineer and aspiring game developper living in Paris, France.
+I'm Adrian Lissot, a software engineer and hobbyist game dev living in Dublin, Ireland.
 
-After graduating from [IMT Alantique](https://www.imt-atlantique.fr/en), I decided to join SoftFluent to sharpen my skills in .NET, C#, HTML, CSS and SQL.
+I currently work for Microsoft. I previously worked SoftFluent, Ubisoft, Marquardt and IBM.
 
-Even though I mainly code in .NET these days, I'm always open for a new challenge in any language and any paradigm, as long as I'm learning along the way. I currently enjoy the functional languages, such as F# !
+I work with .NET, C#, React and TypeScript in my day-to-day job and sometimes participate in game jams using JavaScript and Godot.
