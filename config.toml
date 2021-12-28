@@ -4,4 +4,4 @@ title = "Adrian Lissot's Blog"
 theme = "mint"
 pygmentsCodeFences = true
 pygmentsStyle = "emacs"
-publishDir = "dist"
+publishDir = "docs"
