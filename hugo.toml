@@ -104,3 +104,7 @@ pagination.pagerSize = 5
           identifier = "games"
           name = "Games"
           url = "/games"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
