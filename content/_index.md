@@ -4,7 +4,7 @@ title = 'Adrian Lissot - Software Engineer'
 +++
 # Welcome
 
-{{< figure src="/assets/images/me.jpg" width="200" height="200" >}}
+{{< figure src="me.jpg" width="200" height="200" >}}
 
 I'm Adrian Lissot, an experienced full stack software engineer, previously at Microsoft Ireland. I live in Paraguay since February 2025 after staying 4 years in Dublin.
 I like developing games in my free time, check out the [games](./games) section!
